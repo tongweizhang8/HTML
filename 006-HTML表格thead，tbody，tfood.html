@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>thead，tbody，tfood在table中不是必须的，只是这样做便于后期js代码的编写</title>
+    </head>
+    <body>
+        <table border="1px" width="50%">  
+        <thead>
+            <tr>
+                <th>员工编号</th>
+                <th>员工薪资</th>  
+                <th>部门名称</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>  
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td rowspan="2">6</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">7</td>
+            </tr>
+        </tfoot>
+        </table>
+    </body>
+</html>

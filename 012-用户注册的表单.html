@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用户注册的表单</title>
+    </head>
+    <body>
+        <!--
+            用户注册：
+                用户名
+                密码
+                确认密码
+                性别
+                兴趣爱好
+                学历
+                简介
+            form表单method的属性
+                get：采用get提交的时候，用户提交信息会显示在浏览器的地址栏上
+                post：采用post方式提交的时候，用户提交的信息不会显示在浏览器的地址栏上
+                当用户提交的信息中含有敏感信息，例如密码，建议采用post方式提交
+            method属性不指定，或者指定为get，这种情况都是get
+            只有当method属性指定为post的时候才是post的请求
+            剩下所有的请求都是get请求 
+            post提交的时候的数据格式和get还是一样的，只不过不在地址栏中显示出来
+            post提交的数据还是：name=value&name=value&name=value....
+        -->
+    </body>
+        <form action="http://localhost:8080/jd/regester" method="post"> 
+            用户名
+            <input type="text" name="useranme"/>
+            <br>
+            密码
+            <input type="password" name="password"/>
+            <br>
+            确认密码
+            <input type="password"/>
+            <br>
+            性别
+            <input type="radio" name="gender" value="1" checked/>男<!--单选按钮value必须手动指定-->
+            <input type="radio" name="gender" value="0"/>女
+            <br>
+            兴趣爱好
+            <input type="checkbox" name="hobby" value="1"/>篮球
+            <input type="checkbox" name="hobby" value="2"/>足球
+            <input type="checkbox" name="hobby" value="3"/>乒乓球
+            学历
+            <select name="grade">
+                <option value="1">小学</option>
+                <option value="2">初中</option>
+                <option value="3">高中</option>
+                <option value="4" selected>大学</option><!--默认选中-->
+                <option value="5">硕士</option>
+            </select>
+            <br>
+            简介<!--文本域,文本域没有value属性，用户填写的内容就是value-->
+            <textarea rows="5" cols="30" name="intro"></textarea>
+            <br>
+            <input type="submit" value="注册"/>     
+            <input type="reset" value="重置"/>
+        </form>
+        <!--超链接也可以提交数据给服务器，但提交的数据都是固定不变的-->
+        <!--超链接是get请求，不是post请求-->
+        <a href="http://localhost:8080/jd/regester?username=123&password=123">注册</a>
+    </body>
+</html>
